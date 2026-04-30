@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Redirect requests for the root index.php to /pages/index.php
+RewriteCond %{REQUEST_URI} ^/index\.php$
+RewriteRule ^index\.php$ /pages/index.php [L]
