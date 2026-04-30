@@ -1,5 +1,11 @@
 RewriteEngine On
 
-# Redirect requests for the root index.php to /pages/index.php
-RewriteCond %{REQUEST_URI} ^/index\.php$
-RewriteRule ^index\.php$ /pages/index.php [L]
+# 1. Redirect root to /pages
+RewriteCond %{HTTP_HOST} ^pos-admin\.doitcebutech\.com$ [NC]
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /pages [L,R=301]
+
+# 2. Existing CodeIgniter / API Routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
