@@ -1,7 +1,7 @@
 RewriteEngine On
 
 # 1. Redirect root to /pages
-RewriteCond %{HTTP_HOST} ^pos-admin\.doitcebutech\.com$ [NC]
+RewriteCond %{HTTP_HOST} ^pos-transaction\.doitcebutech\.com$ [NC]
 RewriteCond %{REQUEST_URI} ^/$
 RewriteRule ^$ /pages [L,R=301]
 
